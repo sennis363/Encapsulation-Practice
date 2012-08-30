@@ -19,8 +19,9 @@ public class Startup {
         //employee.lastName = "Piper";
         //employee.ssn = "333-1234";
         
+        //meetWithHr must come first, because order matters.
+        employee.meetWithHr();
         employee.meetDepartmentStaff();
-        employee.meetWithHrForBenefitAndSalryInfo();
         employee.reviewDeptPolicies();
 
         System.out.println("The employee's status is: " + employee.getStatus());

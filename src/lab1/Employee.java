@@ -22,14 +22,17 @@ public class Employee {
     private boolean metDeptStaff;
     private boolean reviewedDeptPolicies;
     private boolean movedIn;
-    private String cubeId;
+    //Making a new string variable.
+    private String status;
+    //private String cubeId;
 
     public Employee() {
 
     }
 
     // Assume this must be performed first
-    public void meetWithHrForBenefitAndSalryInfo() {
+    //Shortened the class name to "meetWithHr"
+    public void meetWithHr() {
         metWithHr = true;
     }
 
@@ -55,9 +58,12 @@ public class Employee {
     }
 
     // Assume this must be performed 4th
-    public void moveIntoCubicle(String cubeId) {
+    //Removed String cubeId from the ().
+    public void moveIntoCubicle() {
         if(metWithHr && metDeptStaff && reviewedDeptPolicies) {
-            this.cubeId = cubeId;
+            //cubeId is not used anywhere else, so commenting out all instances
+            //of cubeId.
+            //this.cubeId = cubeId;
             this.movedIn = true;
         } else {
             throw new IllegalStateException("Sorry, you cannot move in to a "
@@ -69,11 +75,21 @@ public class Employee {
     }
 
     public String getStatus() {
+            return status;
+        //The else is not necessary. If all validations pass as true, which
+        //they should in this case, then getStatus will never return the second
+        //option.
+        /*else {
+            return "Orientation in progress...";
+        }*/
+    }
+    
+    //Making a setStatus to validate if getStatus should return a value.
+    public void setStatus(String status) {
         if(metWithHr && metDeptStaff
            && reviewedDeptPolicies && movedIn) {
-            return "Orientation is complete";
-        } else {
-            return "Orientation in progress...";
+            status = "Orientation is complete.";
+            this.status = status;
         }
     }
 }
