@@ -11,9 +11,13 @@ package lab1;
 public class Startup {
     public static void main(String[] args) {
         Employee employee = new Employee();
-        employee.firstName = "Peter";
-        employee.lastName = "Piper";
-        employee.ssn = "333-1234";
+        
+        //These fields are not used in any way after they are set, so I
+        //decided to "remove" them through commenting.
+        
+        //employee.firstName = "Peter";
+        //employee.lastName = "Piper";
+        //employee.ssn = "333-1234";
         
         employee.meetDepartmentStaff();
         employee.meetWithHrForBenefitAndSalryInfo();
