@@ -23,6 +23,9 @@ public class Startup {
         employee.meetWithHr();
         employee.meetDepartmentStaff();
         employee.reviewDeptPolicies();
+        //Added a few new employee.'s to test stuff.
+        employee.moveIntoCubicle();
+        employee.getStatus();
 
         System.out.println("The employee's status is: " + employee.getStatus());
     }

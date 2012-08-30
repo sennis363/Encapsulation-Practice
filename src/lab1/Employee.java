@@ -89,7 +89,6 @@ public class Employee {
         if(metWithHr && metDeptStaff
            && reviewedDeptPolicies && movedIn) {
             status = "Orientation is complete.";
-            this.status = status;
         }
     }
 }
