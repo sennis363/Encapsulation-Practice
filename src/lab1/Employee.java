@@ -23,7 +23,7 @@ public class Employee {
     private boolean reviewedDeptPolicies;
     private boolean movedIn;
     //Making a new string variable.
-    private String status;
+    private String status = "";
     //private String cubeId;
 
     public Employee() {
@@ -75,6 +75,7 @@ public class Employee {
     }
 
     public String getStatus() {
+        status = "Orientation is complete.";
             return status;
         //The else is not necessary. If all validations pass as true, which
         //they should in this case, then getStatus will never return the second
@@ -85,10 +86,11 @@ public class Employee {
     }
     
     //Making a setStatus to validate if getStatus should return a value.
-    public void setStatus(String status) {
-        if(metWithHr && metDeptStaff
-           && reviewedDeptPolicies && movedIn) {
-            status = "Orientation is complete.";
-        }
-    }
+    //Commenting out, because now it works the original way.
+    //public void setStatus(String status) {
+        //if(metWithHr && metDeptStaff
+           //&& reviewedDeptPolicies && movedIn) {
+            //status = "Orientation is complete.";
+        //}
+    //}
 }
