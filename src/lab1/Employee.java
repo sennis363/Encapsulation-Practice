@@ -25,6 +25,10 @@ public class Employee {
     //Making a new string variable.
     private String status = "";
     //private String cubeId;
+    private final String ERR_MSG = "Sorry, you cannot move in to a "
+                    + "cubicle until you have first met with HR "
+                    + "and then with department staff, and then reviewed"
+                    + "department policies.";
 
     public Employee() {
 
@@ -66,10 +70,7 @@ public class Employee {
             //this.cubeId = cubeId;
             this.movedIn = true;
         } else {
-            throw new IllegalStateException("Sorry, you cannot move in to a "
-                    + "cubicle until you have first met with HR "
-                    + "and then with department staff, and then reviewed"
-                    + "department policies.");
+            throw new IllegalStateException(ERR_MSG);
         }
 
     }
@@ -93,4 +94,12 @@ public class Employee {
             //status = "Orientation is complete.";
         //}
     //}
+    
+    public void hireEmployee() {
+        meetWithHr();
+        meetDepartmentStaff();
+        reviewDeptPolicies();
+        //moveIntoCubicle(cubeId);
+    }
+    
 }
